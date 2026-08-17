@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PhotoPlatform</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>PhotoPlatform</h1>
+            <p id="album-name">Carregando álbum...</p>
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <div id="loading" class="message">
+            Carregando fotos...
+        </div>
+
+        <div id="error" class="message error hidden"></div>
+
+        <section id="gallery" class="gallery"></section>
+
+    </main>
+
+
+    <!-- MODAL -->
+
+    <div id="modal" class="modal hidden">
+
+        <button
+            id="modal-close"
+            class="modal-close"
+            aria-label="Fechar">
+            ×
+        </button>
+
+        <div class="modal-content">
+
+            <img
+                id="modal-image"
+                src=""
+                alt="Foto">
+
+            <div class="modal-footer">
+
+                <div
+                    id="modal-filename"
+                    class="modal-filename">
+                </div>
+
+                <a
+                    id="download-button"
+                    class="download-button"
+                    href="#"
+                    target="_blank"
+                    rel="noopener">
+                    Baixar original
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

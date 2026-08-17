@@ -1,0 +1,404 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background: #111;
+    color: white;
+    padding: 28px 0;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.header p {
+    color: #aaa;
+    font-size: 15px;
+}
+
+
+/* =========================
+   GALERIA
+========================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(220px, 1fr)
+        );
+
+    gap: 20px;
+
+    padding-bottom: 40px;
+}
+
+
+/* =========================
+   CARD DA FOTO
+========================= */
+
+.photo-card {
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.photo-card img {
+    display: block;
+
+    width: 100%;
+    height: 240px;
+
+    object-fit: cover;
+
+    background: #ddd;
+}
+
+.photo-info {
+    padding: 12px 14px;
+}
+
+.photo-info p {
+    font-size: 14px;
+
+    color: #666;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   MENSAGENS
+========================= */
+
+.message {
+    padding: 30px;
+
+    text-align: center;
+
+    color: #666;
+}
+
+.error {
+    color: #b00020;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(0, 0, 0, 0.92);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   CONTEÚDO DO MODAL
+========================= */
+
+.modal-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    max-height: 95vh;
+}
+
+
+/* =========================
+   FOTO GRANDE
+========================= */
+
+.modal-content img {
+    display: block;
+
+    max-width: 90vw;
+
+    max-height: 78vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================
+   RODAPÉ DO MODAL
+========================= */
+
+.modal-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    width: min(90vw, 900px);
+
+    margin-top: 18px;
+
+    padding: 14px 18px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border-radius: 10px;
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* =========================
+   NOME DA FOTO
+========================= */
+
+.modal-filename {
+    color: white;
+
+    font-size: 14px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    flex: 1;
+}
+
+
+/* =========================
+   BOTÃO DOWNLOAD
+========================= */
+
+.download-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    padding: 10px 18px;
+
+    background: white;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.download-button:hover {
+    background: #e8e8e8;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   BOTÃO FECHAR
+========================= */
+
+.modal-close {
+    position: fixed;
+
+    top: 20px;
+
+    right: 28px;
+
+    z-index: 1001;
+
+    width: 48px;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    font-size: 32px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.25);
+
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 700px) {
+
+    .gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .photo-card img {
+        height: 180px;
+    }
+
+    .modal {
+        padding: 15px;
+    }
+
+    .modal-content img {
+        max-width: 96vw;
+
+        max-height: 75vh;
+    }
+
+    .modal-footer {
+        width: 96vw;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+    }
+
+    .modal-filename {
+        text-align: center;
+    }
+
+    .download-button {
+        width: 100%;
+    }
+
+    .modal-close {
+        top: 10px;
+
+        right: 10px;
+
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 28px;
+    }
+}

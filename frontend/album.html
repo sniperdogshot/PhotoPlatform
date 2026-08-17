@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PhotoPlatform - Álbum</title>
+
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="album.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+
+            <div>
+                <h1>PhotoPlatform</h1>
+                <p id="album-name">Carregando álbum...</p>
+            </div>
+
+            <button
+                id="back-button"
+                class="button secondary">
+                Voltar
+            </button>
+
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <!-- UPLOAD -->
+
+        <section class="upload-section">
+
+            <div>
+                <h2>Enviar fotos</h2>
+
+                <p>
+                    Selecione uma ou várias fotos para adicionar ao álbum.
+                </p>
+            </div>
+
+
+            <input
+                id="photo-input"
+                type="file"
+                accept="image/jpeg,image/png,image/webp"
+                multiple
+            >
+
+
+            <button
+                id="upload-button"
+                class="button"
+                disabled>
+                Enviar fotos
+            </button>
+
+
+            <div
+                id="upload-status"
+                class="upload-status">
+            </div>
+
+        </section>
+
+
+        <!-- ERRO -->
+
+        <div
+            id="error"
+            class="message error hidden">
+        </div>
+
+
+        <!-- FOTOS -->
+
+        <section class="photos-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Fotos do álbum</h2>
+
+                    <p id="photo-count">
+                        Carregando...
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div
+                id="photos-loading"
+                class="message">
+                Carregando fotos...
+            </div>
+
+
+            <div
+                id="photos"
+                class="admin-gallery">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="album.js"></script>
+
+</body>
+
+</html>

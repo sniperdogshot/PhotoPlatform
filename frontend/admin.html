@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PhotoPlatform - Painel</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+
+            <div>
+                <h1>PhotoPlatform</h1>
+                <p>Painel administrativo</p>
+            </div>
+
+            <button id="logout-button" class="button secondary">
+                Sair
+            </button>
+
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <section class="top-bar">
+
+            <div>
+                <h2>Meus álbuns</h2>
+                <p>Gerencie seus eventos e fotos.</p>
+            </div>
+
+            <button id="new-album-button" class="button">
+                + Novo álbum
+            </button>
+
+        </section>
+
+
+        <div id="loading" class="message">
+            Carregando álbuns...
+        </div>
+
+
+        <div id="error" class="message error hidden"></div>
+
+
+        <section
+            id="albums"
+            class="albums">
+        </section>
+
+    </main>
+
+
+    <!-- MODAL NOVO ÁLBUM -->
+
+    <div
+        id="album-modal"
+        class="modal hidden">
+
+        <div class="modal-content">
+
+            <button
+                id="album-modal-close"
+                class="modal-close">
+                ×
+            </button>
+
+            <h2>Novo álbum</h2>
+
+            <form id="album-form">
+
+                <label for="album-name-input">
+                    Nome do álbum
+                </label>
+
+                <input
+                    id="album-name-input"
+                    type="text"
+                    maxlength="120"
+                    placeholder="Ex.: Casamento João e Maria"
+                    required
+                >
+
+                <div id="album-form-error"
+                     class="form-error hidden">
+                </div>
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        id="cancel-album-button"
+                        class="button secondary">
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="button">
+                        Criar álbum
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>
